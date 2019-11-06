@@ -2,10 +2,25 @@ package br.com.caelum.ingresso.model;
 
 import java.time.LocalTime;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.Entity;
+import org.springframework.data.annotation.Id;
+
+
+@Entity
 public class Sessao {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private LocalTime horario;
+	@ManyToOne
 	private Sala sala;
+	
+	@ManyToOne
 	private Filme fime;
 
 	public Sessao(LocalTime horario, Filme filme, Sala sala) {
