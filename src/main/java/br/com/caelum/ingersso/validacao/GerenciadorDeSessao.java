@@ -1,4 +1,4 @@
-package validacao;
+package br.com.caelum.ingersso.validacao;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
