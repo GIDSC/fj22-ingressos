@@ -52,5 +52,13 @@ public class Sessao {
 	public void setFilme(Filme fime) {
 		this.filme = fime;
 	}
+	
+	public Sala getSala() {
+		return sala;
+	}
+
+	public void setSala(Sala sala) {
+		this.sala = sala;
+	}
 
 }
