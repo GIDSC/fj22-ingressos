@@ -6,8 +6,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.aspectj.lang.annotation.Before;
+
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.ingersso.validacao.GerenciadorDeSessao;
@@ -22,7 +23,7 @@ public class GerenciadorDeSessaoTeste {
 	private Sessao sessaoDasTreze;
 	private Sessao sessaoDasDezoito;
 
-	@Before(value = "")
+	@Before
 	public void preparaSesssoes() {
 		this.rogueOne = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI");
 		this.sala3D = new Sala("Sala 3D");
@@ -44,7 +45,7 @@ public class GerenciadorDeSessaoTeste {
 		List<Sessao> sessoes = Arrays.asList(sessaoDasDez);
 		Sessao sessao = new Sessao(sessaoDasDez.getHorario().minusHours(1),rogueOne,sala3D);
 		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoes);
-		Assert.assertFalse(gerenciador.cabe(sessaoDasDez));
+		Assert.assertFalse(gerenciador.cabe(sessao));
 	}
 	
 	@Test
@@ -61,7 +62,7 @@ public class GerenciadorDeSessaoTeste {
 		List<Sessao> sessoes = Arrays.asList(sessaoDasDez,sessaoDasDezoito);
 		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoes);	
 		
-		Assert.assertTrue(gerenciador.cabe(sessaoDasDez));
+		Assert.assertTrue(gerenciador.cabe(sessaoDasTreze));
 	}
 	@Test
 	public void garanteQueNaoDevePermitirUmaSessaoQueTerminaNoProximoDia() {
