@@ -21,6 +21,7 @@ import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.ImagemCapa;
 import br.com.caelum.ingresso.model.Sessao;
+import br.com.caelum.ingresso.model.TipoDeIngresso;
 import br.com.caelum.ingresso.model.form.SessaoForm;
 import br.com.caelum.ingresso.rest.OmdbClient;
 
@@ -60,6 +61,7 @@ public class SessaoController {
 
 		mv.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
 		mv.addObject("sessao", sessao);
+		mv.addObject("tiposDeIngressos", TipoDeIngresso.values());
 
 		return mv;
 	}
