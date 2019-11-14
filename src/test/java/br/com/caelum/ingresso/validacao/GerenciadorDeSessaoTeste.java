@@ -14,13 +14,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.caelum.ingersso.validacao.GerenciadorDeSessao;
 import br.com.caelum.ingresso.model.Filme;
 import br.com.caelum.ingresso.model.Ingresso;
 import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
 import br.com.caelum.ingresso.model.TipoDeIngresso;
+import br.com.caelum.ingresso.validacao.GerenciadorDeSessao;
 
 public class GerenciadorDeSessaoTeste {
 	private Filme rogueOne;
